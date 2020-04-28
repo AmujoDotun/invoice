@@ -8,8 +8,8 @@
                 <div class="card-header">Create Form</div>
 
                 <div class="card-body">
-                <!-- <form action="{{ route('invoices.store') }}" method="post"> -->
-                <!-- @csrf -->
+                <form action="{{ route('invoices.store') }}" method="post">
+                @csrf
                 <div class="card-body">
                     <div class="container">
 
