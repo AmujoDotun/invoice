@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Customer;
+use App\Invoice;
 
 class InvoiceController extends Controller
 {
@@ -14,7 +15,8 @@ class InvoiceController extends Controller
 
     public function store(Request $request)
     {
-        Customer::create($request->customer);
+        $customer = Customer::create($request->customer);
+        Invoice::create($request->invoice + ['customer_id' => $customer->id]);
         return 'to be continue';
     }
 }
