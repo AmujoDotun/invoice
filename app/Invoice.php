@@ -8,4 +8,9 @@ class Invoice extends Model
 {
    
     protected $fillable =['invoice_number', 'invoice_date', 'customer_id', 'tax_percent'];
+
+    public function customer()
+    {
+        return $this->belongsTo(Customer::class);
+    }
 }
