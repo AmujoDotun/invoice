@@ -13,4 +13,21 @@ class Invoice extends Model
     {
         return $this->belongsTo(Customer::class);
     }
+
+    public function invoice_item()
+    {
+        return $this->hasMany(InvoiceItem::class);
+    }
+
+    public function getTotalAmountAttribute()
+    {
+        $total_amount =0;
+
+        foreach($this->invoice_item as $item)
+        {
+            $total_amount += $item->price * $item->quantity;
+        }
+        
+        return $total_amount;
+    }
 }

@@ -30,7 +30,7 @@
                                 <td>{{ $invoice->invoice_date}}</td>
                                 <td>{{ $invoice->invoice_number}}</td>
                                 <td>{{ $invoice->invoice_name}}</td>
-                                <td>0</td>
+                                <td>{{ number_format($invoice->total_amount, 2) }}</td>
                             </tr>
                         @endforeach
                     </table>
