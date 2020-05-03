@@ -31,6 +31,7 @@
                                 <td>{{ $invoice->invoice_number}}</td>
                                 <td>{{ $invoice->invoice_name}}</td>
                                 <td>{{ number_format($invoice->total_amount, 2) }}</td>
+                                <td><a href="{{ route('invoices.show', $invoice->id)}}" class="btn btn-sm btn-info">View Invoice</a></td>
                             </tr>
                         @endforeach
                     </table>
